@@ -16,6 +16,9 @@
 #include <cmath>
 using namespace std;
 
+// Declaración de la función auxiliar
+void Trim(string& s);
+
 Location::Location(){
     _x = 0;
     _y = 0;
@@ -76,4 +79,17 @@ void Location::load(istream& is){
     is >> _y;
     getline(is, _name);
     Trim(_name);
+}
+
+void Trim(string& s) {
+    
+    int p = s.find_first_not_of(" \t");
+
+    if (p != -1) {
+        int q = s.find_last_not_of(" \t");
+        s = s.substr(p, q - p + 1);
+    }
+    
+    else s = "";
+    
 }
