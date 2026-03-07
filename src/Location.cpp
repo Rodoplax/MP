@@ -72,10 +72,8 @@ void Location::set(double x, double y, const string& name){
 }
 
 void Location::load(istream& is){
-
     is >> _x;
     is >> _y;
     getline(is, _name);
     Trim(_name);
-
 }
