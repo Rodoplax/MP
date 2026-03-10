@@ -73,20 +73,44 @@ int main(int argc, char *argv[]) {
         nUnionLocs; // number of locations in arrayUnionLocations
 
     // Read bottomLeft1 and topRight1 from standard input
+
+    bottomLeft1.load() ; topRight1.load();
+
     // Read bottomLeft2 and topRight2 from standard input
+
+    bottomLeft2.load() ; topRight2.load();
 
     // Read from standard input all the locations and insert them in arrayLocations
 
+    int size = 0;
+    cin >> size;
+
+    ReadArrayLocation(arrayLocations, size, nLocs);
+
     // Insert the locations in arrayLocations in the locations object 
+
+    ToVectorLocation(arrayLocations, nLocs);
 
     // Take from the locations object the locations within each area and 
     // insert them in selectedLocations1 and selectedLocations2 
 
+    selectedLocations1 = locations.select(bottomLeft1, topRight1);
+    selectedLocations2 = locations.select(bottomLeft2, topRight2);
+
     // Calculate the union of selectedLocations1 and selectedLocations2 
+
+    VectorLocation UnionLocations = selectedLocations1.append(selectedLocations2);
 
     // Sort the resulting VectorLocation object
 
+    UnionLocations.sort();
+
     // Convert the sorted VectorLocation object to an array of Location objects
 
+    ToArrayLocation(UnionLocations, arrayUnionLocations, MAX_NLOCATIONS, nUnionLocs);
+
     // Print the resulting array of Location objects in the standard output
+
+    PrintArrayLocation(arrayUnionLocations, nUnionLocs);
+
 }
