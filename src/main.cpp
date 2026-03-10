@@ -74,11 +74,11 @@ int main(int argc, char *argv[]) {
 
     // Read bottomLeft1 and topRight1 from standard input
 
-    bottomLeft1.load() ; topRight1.load();
+    bottomLeft1.load(cin) ; topRight1.load(cin);
 
     // Read bottomLeft2 and topRight2 from standard input
 
-    bottomLeft2.load() ; topRight2.load();
+    bottomLeft2.load(cin) ; topRight2.load(cin);
 
     // Read from standard input all the locations and insert them in arrayLocations
 
@@ -99,15 +99,15 @@ int main(int argc, char *argv[]) {
 
     // Calculate the union of selectedLocations1 and selectedLocations2 
 
-    VectorLocation UnionLocations = selectedLocations1.append(selectedLocations2);
+    selectedLocations1.join(selectedLocations2);
 
     // Sort the resulting VectorLocation object
 
-    UnionLocations.sort();
+    selectedLocations1.sort();
 
     // Convert the sorted VectorLocation object to an array of Location objects
 
-    ToArrayLocation(UnionLocations, arrayUnionLocations, MAX_NLOCATIONS, nUnionLocs);
+    ToArrayLocation(selectedLocations1, arrayUnionLocations, MAX_NLOCATIONS, nUnionLocs);
 
     // Print the resulting array of Location objects in the standard output
 
