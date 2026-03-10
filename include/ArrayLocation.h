@@ -63,8 +63,8 @@ void ReadArrayLocation(Location arrayLocations[], int capacity, int& nLocs);
  * @param nLocs An integer with the number of objects inserted in
  * arrayLocations. Output parameter
  */
-void ToArrayLocation(VectorLocation vector, Location arrayLocations[],
-                     int capacity, int nLocs);
+void ToArrayLocation(const VectorLocation & vector, Location arrayLocations[],
+                     int capacity, int & nLocs);
 
 /**
  * @brief Returns a VectorLocation object filled with a copy of the objects from
