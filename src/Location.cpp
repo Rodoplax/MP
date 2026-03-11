@@ -53,6 +53,7 @@ string Location::toString() const {
     output += to_string(_x) + " " + to_string(_y);
     if(!_name.empty()) 
         output += " " + getName();
+    output += "\n";
     return output;
 }
 

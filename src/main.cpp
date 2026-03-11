@@ -94,8 +94,8 @@ int main(int argc, char *argv[]) {
 
     // Insert the locations in arrayLocations in the locations object 
 
-    ToVectorLocation(arrayLocations, nLocs);
-
+    locations = ToVectorLocation(arrayLocations, nLocs);
+    cout << locations.toString();
     // Take from the locations object the locations within each area and 
     // insert them in selectedLocations1 and selectedLocations2 
 
