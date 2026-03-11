@@ -12,6 +12,11 @@
  * Created on 24 de octubre de 2025, 9:27
  */
 
+/**
+ * @author estudiante1 : Mota Ortega, Pedro Ángel
+ * @author estudiante2 : García Liébana, David
+*/
+
 #include <iostream>
 
 #include "Location.h"
@@ -85,12 +90,12 @@ int main(int argc, char *argv[]) {
     int size = 0;
     cin >> size;
 
-    ReadArrayLocation(arrayLocations, size, nLocs);
+    ReadArrayLocation(arrayLocations, MAX_NLOCATIONS, nLocs);
 
     // Insert the locations in arrayLocations in the locations object 
 
-    ToVectorLocation(arrayLocations, nLocs);
-
+    locations = ToVectorLocation(arrayLocations, nLocs);
+    cout << locations.toString();
     // Take from the locations object the locations within each area and 
     // insert them in selectedLocations1 and selectedLocations2 
 
