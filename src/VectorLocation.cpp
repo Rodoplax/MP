@@ -35,26 +35,22 @@ int VectorLocation::getCapacity() const{
 
 string VectorLocation::toString() const {
     string output;
-    output+= _size;
+    output+= to_string(_size);
     output+= '\n';
     for (int i=0; i<_size; i++) {
         output+=  _locations[i].toString();
-        output+= ' ';
+        output+= '\n';
     }
     return output;
 }
 
 int VectorLocation::findLocation(const Location &location) const {
-    bool found = false;
-    int i = 0;
-
-    while (!found && (i < _size)) {
-        found =(_locations[i].getName() == location.getName() &&
-                _locations[i].distance(location) == 0);
-        if (!found) i++;
+    for (int i = 0; i < _size; i++) {
+        if (_locations[i].getName() == location.getName()) {
+            return i;
+        }
     }
-    if (i< _size) i = -1;
-    return i;
+    return -1;
 }
 
 VectorLocation VectorLocation::select(const Location &bottomLeft,
@@ -87,6 +83,10 @@ bool VectorLocation::append(const Location &location) {
     if (_size == DIM_VECTOR_LOCATIONS)
         throw (out_of_range("append():"
         " size of vector over DIM_VECTOR_LOCATIONS"));
+    
+    if (location.getName().empty())
+        return false;
+        
     bool found = findLocation(location) != -1;
     if (!found) {
         _locations[_size] = location;
@@ -102,19 +102,17 @@ void VectorLocation::join(const VectorLocation &locations) {
 }
 
 void VectorLocation::sort() {
-    for (int i = 0; i<_size; i++){
-        // Maximun search
-        int pos_max = 0;
-        char char_max = _locations[_size-i-1].getName().at(0);
-        for (int j = 0; j<_size-i-1;j++) {
-            if (_locations[j].getName().at(0)>char_max) {
-                pos_max = j;
-                char_max = _locations[j].getName().at(0);
-            }
+    // Metodo de seleccion simple
+    for (int i = 0; i < _size - 1; i++) {
+        int min_idx = i;
+        for (int j = i + 1; j < _size; j++) {
+            if (_locations[j].getName() < _locations[min_idx].getName())
+                min_idx = j;
         }
-        // Switch max. with the last position.
-        Location temp = _locations[_size-i-1];
-        _locations[_size-i-1] = _locations[pos_max];
-        _locations[pos_max] = temp;
+        if (min_idx != i) {
+            Location temp = _locations[i];
+            _locations[i] = _locations[min_idx];
+            _locations[min_idx] = temp;
+        }
     }
 }
