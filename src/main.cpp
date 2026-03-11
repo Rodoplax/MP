@@ -12,6 +12,11 @@
  * Created on 24 de octubre de 2025, 9:27
  */
 
+/**
+ * @author estudiante1 : Mota Ortega, Pedro Ángel
+ * @author estudiante2 : García Liébana, David
+*/
+
 #include <iostream>
 
 #include "Location.h"
@@ -85,7 +90,7 @@ int main(int argc, char *argv[]) {
     int size = 0;
     cin >> size;
 
-    ReadArrayLocation(arrayLocations, size, nLocs);
+    ReadArrayLocation(arrayLocations, MAX_NLOCATIONS, nLocs);
 
     // Insert the locations in arrayLocations in the locations object 
 

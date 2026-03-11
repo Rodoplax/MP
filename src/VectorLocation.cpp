@@ -72,13 +72,13 @@ void VectorLocation::clear() {
 }
 
 const Location & VectorLocation::at(int pos) const {
-    if ((0<=pos) && (pos<_size))
+    if ((0>pos) || (pos>=_size))
         throw out_of_range(string("VectorLocation::&at(int pos)") + to_string(pos));
     return _locations[pos];
 }
 
 Location & VectorLocation::at(int pos) {
-    if ((0<=pos) && (pos<_size))
+    if ((0>pos) || (pos>=_size))
         throw out_of_range(string("VectorLocation::&at(int pos)") + to_string(pos));
     return _locations[pos];
 }

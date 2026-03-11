@@ -47,7 +47,7 @@ void ReadArrayLocation(Location arrayLocations[], int capacity, int& nLocs){
    
 }
 
-void ToArrayLocation(VectorLocation vector, Location arrayLocations[],
+void ToArrayLocation(const VectorLocation & vector, Location arrayLocations[],
                      int capacity, int& nLocs){
     
     int n = vector.getSize();
