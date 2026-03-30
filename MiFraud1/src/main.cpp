@@ -12,6 +12,11 @@
  * Created on 24 de octubre de 2025, 9:27
  */
 
+/**
+ * @author estudiante1 : Mota Ortega, Pedro Ángel
+ * @author estudiante2 : García Liébana, David
+*/
+
 #include <iostream>
 
 #include "VectorLocation.h" 
