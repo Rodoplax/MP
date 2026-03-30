@@ -1,1 +1,0 @@
-/usr/bin/g++ -Wall -Wextra -pedantic -g CMakeFiles/MiFraud0.dir/src/main.cpp.o CMakeFiles/MiFraud0.dir/src/ArrayLocation.cpp.o CMakeFiles/MiFraud0.dir/src/Location.cpp.o CMakeFiles/MiFraud0.dir/src/VectorLocation.cpp.o -o MiFraud0 
