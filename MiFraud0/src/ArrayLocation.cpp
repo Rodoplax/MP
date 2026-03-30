@@ -64,7 +64,7 @@ void ToArrayLocation(const VectorLocation & vector, Location arrayLocations[],
     nLocs = n;
 }
 
-VectorLocation ToVectorLocation(Location arrayLocations[], int nLocs){
+VectorLocation ToVectorLocation( const Location arrayLocations[], int nLocs){
     
     if(nLocs < 0)
         throw out_of_range("ToVectorLocation: El numero de objetos no puede ser menor a 0");
