@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/build",
+  "command": "/usr/bin/c++  -I/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/include -Wall -Wextra -Wpedantic -g -std=gnu++14 -o CMakeFiles/MiFraud1.dir/src/VectorInt.cpp.o -c /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/src/VectorInt.cpp",
+  "file": "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/src/VectorInt.cpp",
+  "output": "CMakeFiles/MiFraud1.dir/src/VectorInt.cpp.o"
+},
+{
+  "directory": "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/build",
+  "command": "/usr/bin/c++  -I/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/include -Wall -Wextra -Wpedantic -g -std=gnu++14 -o CMakeFiles/MiFraud1.dir/src/Clustering.cpp.o -c /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/src/Clustering.cpp",
+  "file": "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/src/Clustering.cpp",
+  "output": "CMakeFiles/MiFraud1.dir/src/Clustering.cpp.o"
+},
+{
+  "directory": "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/build",
+  "command": "/usr/bin/c++  -I/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/include -Wall -Wextra -Wpedantic -g -std=gnu++14 -o CMakeFiles/MiFraud1.dir/src/Location.cpp.o -c /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/src/Location.cpp",
+  "file": "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/src/Location.cpp",
+  "output": "CMakeFiles/MiFraud1.dir/src/Location.cpp.o"
+},
+{
+  "directory": "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/build",
+  "command": "/usr/bin/c++  -I/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/include -Wall -Wextra -Wpedantic -g -std=gnu++14 -o CMakeFiles/MiFraud1.dir/src/VectorLocation.cpp.o -c /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/src/VectorLocation.cpp",
+  "file": "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/src/VectorLocation.cpp",
+  "output": "CMakeFiles/MiFraud1.dir/src/VectorLocation.cpp.o"
+},
+{
+  "directory": "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/build",
+  "command": "/usr/bin/c++  -I/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/include -Wall -Wextra -Wpedantic -g -std=gnu++14 -o CMakeFiles/MiFraud1.dir/src/main.cpp.o -c /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/src/main.cpp",
+  "file": "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud1/src/main.cpp",
+  "output": "CMakeFiles/MiFraud1.dir/src/main.cpp.o"
+}
+]
