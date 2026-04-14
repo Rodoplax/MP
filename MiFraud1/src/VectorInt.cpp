@@ -17,6 +17,8 @@
 using namespace std;
 
 void VectorInt::append(int value) {
+    if (_size >= DIM_VECTOR_VALUES)
+        throw std::out_of_range("void VectorInt::append(int value) : Size of the array reached.")
     _values[_size++] = value;
 }
 
@@ -26,6 +28,8 @@ void VectorInt::assign(int value) {
 }
 
 int & VectorInt::at(int pos) {
+    if (pos >= DIM_VECTOR_VALUES)
+        throw std::out_of_range("void VectorInt::append(int value) : Size of the array reached.")
     return _values[pos];
 }
 
@@ -55,9 +59,14 @@ double VectorInt::distance(const VectorInt &other) const {
         throw std::invalid_argument(
             "The sizes of this and the provided object are different"
             );
+    if (_size == 0 || other._size == 0)
+        throw std::invalid_argument(
+            "The size of one of the vectors is 0"
+            );
     int sum = 0;
     for (int i = 0; i < _size; i++) 
-        sum += _values[i] * other._values[i];
+        sum += (_values[i] - other._values[i])*(_values[i] - other._values[i]);
+    sum = sqrt(sum);
     return sum;
 }
 
@@ -73,10 +82,11 @@ std::string VectorInt::toString() const {
     std::string output;
     output+= std::to_string(_size);
     output+= '\n';
-    for (int i=0; i<_size; i++) {
+    for (int i=0; i<_size-1; i++) {
         output+= to_string(_values[i]);
         output+= ' ';
     }
+    output+= to_string(_values[_size-1]);
     if (_size > 0) output+= '\n';
     return output;
 }
