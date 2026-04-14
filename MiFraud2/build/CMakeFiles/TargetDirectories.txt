@@ -1,0 +1,3 @@
+/home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud2/build/CMakeFiles/Fraud2.dir
+/home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud2/build/CMakeFiles/edit_cache.dir
+/home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud2/build/CMakeFiles/rebuild_cache.dir
