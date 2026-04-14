@@ -117,7 +117,9 @@ void VectorLocation::sort() {
 }
 
 int VectorLocation::nearest(const Location& location) const{
-    int i_nearest = -1;
+    if (_size == 0)
+        return -1;
+    int i_nearest = 0;
     double min_dist = _locations[0].distance(location);
     for (int i=1; i<_size; i++) {
         double dist = _locations[i].distance(location);
