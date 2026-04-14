@@ -13,12 +13,13 @@
  */
 
 #include "VectorInt.h"
+#include <cmath>
 
 using namespace std;
 
 void VectorInt::append(int value) {
     if (_size >= DIM_VECTOR_VALUES)
-        throw std::out_of_range("void VectorInt::append(int value) : Size of the array reached.")
+        throw std::out_of_range("void VectorInt::append(int value) : Size of the array reached.");
     _values[_size++] = value;
 }
 
@@ -28,12 +29,14 @@ void VectorInt::assign(int value) {
 }
 
 int & VectorInt::at(int pos) {
-    if (pos >= DIM_VECTOR_VALUES)
-        throw std::out_of_range("void VectorInt::append(int value) : Size of the array reached.")
+    if (pos >= _size)
+        throw std::out_of_range("void VectorInt::at(int pos) : Size of the array reached.");
     return _values[pos];
 }
 
 const int & VectorInt::at(int pos) const {
+    if (pos >= _size)
+        throw std::out_of_range("void VectorInt::at(int pos) : Size of the array reached.");
     return _values[pos];
 }
 
@@ -86,8 +89,12 @@ std::string VectorInt::toString() const {
         output+= to_string(_values[i]);
         output+= ' ';
     }
-    output+= to_string(_values[_size-1]);
-    if (_size > 0) output+= '\n';
+    
+
+    if (_size > 0) {
+        output+= to_string(_values[_size-1]);
+        output+= '\n';
+    }
     return output;
 }
 
