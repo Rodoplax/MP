@@ -18,9 +18,9 @@ using namespace std;
 
 void InitializeArrayClustering(ArrayClustering & arrayClustering, 
     int capacity) {
-        arrayClustering.capacity = INITIAL_ARRAY_CLUSTERING_CAPACITY;
+        arrayClustering.capacity = capacity;
         arrayClustering.size = 0;
-        arrayClustering.clustering = new Clustering [INITIAL_ARRAY_CLUSTERING_CAPACITY];
+        arrayClustering.clustering = new Clustering [capacity];
     }
 
 void DeallocateArrayClustering(ArrayClustering & arrayClustering) {
@@ -32,7 +32,7 @@ void DeallocateArrayClustering(ArrayClustering & arrayClustering) {
 
 int FindArrayClustering(const ArrayClustering & arrayClustering,
                         const Clustering & clustering) {
-    bool found;
+    bool found = false;
     int i = 0;
 
     while (!found && i < arrayClustering.size) {
@@ -45,17 +45,46 @@ int FindArrayClustering(const ArrayClustering & arrayClustering,
 
 void AppendArrayClustering(ArrayClustering & arrayClustering,
                            const Clustering & clustering) {
+
     if (arrayClustering.capacity == arrayClustering.size) {
-        Clustering* temp = new Clustering [arrayClustering.capacity + 
-                           ARRAY_CLUSTERING_CAPACITY_INCREMENT];
-        for (int i = 0; i < arrayClustering.size; i++) 
+
+        Clustering* temp = new Clustering[
+            arrayClustering.capacity + ARRAY_CLUSTERING_CAPACITY_INCREMENT
+        ];
+
+        for (int i = 0; i < arrayClustering.size; i++) {
             temp[i] = arrayClustering.clustering[i];
-            delete[] arrayClustering.clustering;
-            arrayClustering.clustering = temp;
-    }
-    arrayClustering.clustering[arrayClustering.size] = clustering;
+        }
+
+        delete[] arrayClustering.clustering;
+        arrayClustering.clustering = temp;
+
+        arrayClustering.capacity += ARRAY_CLUSTERING_CAPACITY_INCREMENT;
     }
 
+    arrayClustering.clustering[arrayClustering.size] = clustering;
+    arrayClustering.size++; 
+}
+
 void SortArrayClustering(ArrayClustering & arrayClustering) {
-    return;
+
+    for(int i = 0; i < arrayClustering.size-1; i++){
+
+        int smallest = i;
+
+        for(int j = i + 1; j < arrayClustering.size; j++)
+
+            if(arrayClustering.clustering[smallest].getSumWCV() > arrayClustering.clustering[j].getSumWCV()
+               || (arrayClustering.clustering[smallest].getSumWCV() == arrayClustering.clustering[j].getSumWCV()
+                   && arrayClustering.clustering[smallest].getNumIterations() > arrayClustering.clustering[j].getNumIterations()))
+                smallest = j;
+            
+        if(smallest != i){
+            Clustering temp;
+            temp = arrayClustering.clustering[smallest]; 
+            arrayClustering.clustering[smallest] = arrayClustering.clustering[i];
+            arrayClustering.clustering[i] = temp;
+        } 
+
+    }
 }

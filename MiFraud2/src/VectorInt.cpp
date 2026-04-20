@@ -66,9 +66,11 @@ double VectorInt::distance(const VectorInt &other) const {
         throw std::invalid_argument(
             "The size of one of the vectors is 0"
             );
-    int sum = 0;
-    for (int i = 0; i < _size; i++) 
-        sum += (_values[i] - other._values[i])*(_values[i] - other._values[i]);
+    double sum = 0;
+    for (int i = 0; i < _size; i++) {
+        double diff = _values[i] - other._values[i];
+        sum += diff * diff;
+    }
     sum = sqrt(sum);
     return sum;
 }

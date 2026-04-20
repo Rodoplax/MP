@@ -184,7 +184,7 @@ void Clustering::run() {
 
 void Clustering::initialClusterAssignment(){
 
-    srand(DEFAULT_RANDOM_SEED);
+    srand(_seed);
     for(int i = 0; i < _locations.getSize(); i++)
         _clusters.at(i) = rand() % _K;
 
@@ -200,4 +200,3 @@ double Clustering::calculateSumWCV(){
     return sumWCV;
 
 }
-

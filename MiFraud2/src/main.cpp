@@ -12,6 +12,11 @@
  * Created on 24 de octubre de 2025, 9:27
  */
 
+/**
+ * @author estudiante1 : Mota Ortega, Pedro Ángel
+ * @author estudiante2 : García Liébana, David
+*/
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -98,7 +103,7 @@ int main(int argc, char* argv[]) {
 
     // Check if the number of arguments is valid.
     if (argc != 5) {
-        showHelp(cout, "Incorrect number of parameters");
+        showHelp(cout, "Not enough arguments");
         return 1;
     }
     // Read K from the command line arguments
@@ -113,11 +118,9 @@ int main(int argc, char* argv[]) {
 
     inputFile.open(dir);
     if (!inputFile) {
-        showHelp(cout, "Couldn't open given directory");
+        showHelp(cout, "Error opening input file: " + dir);
         return 1;
     }
-
-    VectorLocation locations;
 
     locations.load(inputFile);
 
@@ -131,14 +134,24 @@ int main(int argc, char* argv[]) {
     // arrayClustering
 
     for (int i = minSeed; i < maxSeed+1; i++) {
-
+        Clustering insert;
+        insert.set(locations, K, i);
+        insert.run();
+        if (FindArrayClustering(arrayClustering, insert) == -1)
+            AppendArrayClustering(arrayClustering, insert);
     }
 
     // Sort the different Clustering objects stored in arrayClustering
+    SortArrayClustering(arrayClustering);
 
     // Show statistics of each clustering in the sorted order
+    for (int i = 0; i < arrayClustering.size; i++) {
+        cout << "Clustering " << i << ":" << endl;
+        cout << arrayClustering.clustering[i].getStatistics() << endl;
+    }
 
     // Deallocate the dynamic memory used by arrayClustering
+    DeallocateArrayClustering(arrayClustering);
     
     return 0;
 }
