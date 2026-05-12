@@ -65,7 +65,7 @@ public:
      * @param orig the DataSet object used as source for the copy. 
      * Input parameter
      */
-    DataSet(DataSet orig);
+    DataSet(const DataSet& orig);
     
     /**
      * @brief Destructor
@@ -79,29 +79,29 @@ public:
      * Input parameter
      * @return A reference to this object
      */
-    DataSet operator=(DataSet orig);
+    DataSet& operator=(const DataSet& orig);
 
     /**
      * @brief Gets the number of instances in this DataSet
      * Query method
      * @return The number of instances in this DataSet
      */
-    int getNumInstances();
+    int getNumInstances() const;
     
     /**
      * @brief Gets the number of localizations in this DataSet
      * Query method
      * @return The number of localizations in this DataSet
      */
-    int getNumLocations(); 
+    int getNumLocations() const; 
     
     /**
      * @brief Gets the value for the instance instanceIndex at the localization
      * locationIndex.
-     * @throw Throws a std::out_of_range exception if instanceIndex is not 
-     * a valid index for an instance in this DataSet.
-     * @throw Throws a std::out_of_range exception if locationIndex is not a
-     * valid index for an location in this DataSet.
+     * @throw std::out_of_range Throws a std::out_of_range exception if 
+     * instanceIndex is not a valid index for an instance in this DataSet.
+     * @throw std::out_of_range Throws a std::out_of_range exception if 
+     * locationIndex is not a valid index for an location in this DataSet.
      * Query method
      * @param instanceIndex An integer with the index of the selected instance. 
      * Input parameter
@@ -110,20 +110,20 @@ public:
      * @return The value for the instance instanceIndex at the localization
      * locationIndex
      */   
-    int getValue(int instanceIndex, int locationIndex);
+    int getValue(int instanceIndex, int locationIndex) const;
     
     /**
      * @brief Gets the label (integer value) of the instance at the provided
      * position (instanceIndex)
-     * @throw Throws a std::out_of_range exception if instanceIndex is not 
-     * a valid index for an instance in this DataSet.
+     * @throw std::out_of_range Throws a std::out_of_range exception if 
+     * instanceIndex is not a valid index for an instance in this DataSet.
      * Query method
      * @param instanceIndex An integer with the index of the selected instance.
      * Input parameter
      * @return The label (integer value) of the instance at the provided
      * position
      */
-    int getLabel(int instanceIndex);
+    int getLabel(int instanceIndex) const;
     
     /**
      * @brief Gets a const reference to the vector of Location objects in this
@@ -132,14 +132,14 @@ public:
      * @return A const reference to the vector of Location objects in this
      * DataSet
      */
-    VectorLocation getVectorLocation();
+    const VectorLocation& getVectorLocation() const;
 
     /**
      * @brief Gets a const reference to the vector of labels in this DataSet
      * Query method
      * @return A const reference to the vector of labels in this DataSet
      */
-    VectorInt getVectorLabels();
+    const VectorInt& getVectorLabels() const;
     
     /**
      * @brief Obtains a string with information about this DataSet object, 
@@ -158,11 +158,15 @@ public:
      * Query method
      * @return string with information about this CrimeSet object
      */
-    std::string toString() ;
+    std::string toString() const;
 
     /**
      * @brief Sets a new value for the instance instanceIndex at the 
      * localization locationIndex.
+     * @throw std::out_of_range Throws a std::out_of_range exception if 
+     * instanceIndex is out of the valid range
+     * @throw std::out_of_range Throws a std::out_of_range exception if 
+     * locationIndex is out of the valid range
      * Modifier method
      * @param instanceIndex An integer with the index of the selected instance. 
      * Input parameter
@@ -244,7 +248,7 @@ public:
      * if the given file cannot be opened or if an error occurs while reading
      * from the file. 
      */
-    void load(std::string fileName);
+    void load(std::string& fileName);
     
     /**
      * @brief Gets a new DataSet from this DataSet. The DataSet will contain 
@@ -312,7 +316,26 @@ private:
      * the order of the columns in the 2D matrix of this DataSet.
      */
     VectorLocation _locations;
+    
+     /** 
+     * @brief Allocates memory for _values and initializes all entries to 0.
+     * Modifier method
+     */
+    void _initMatrix();
+
+    /** 
+     * @brief Copies the data members of the explicit object into the implicit object
+     * assuming the matrix is not initialized.
+     * Modifier method
+     */
+    void _copy(const DataSet& orig);
+
+    /** 
+     * @brief Deallocate the memory of the matrix
+     * Modifier method
+     */
+    void _deallocateMatrix();
+
 }; // end of class DataSet
 
 #endif /* DATASET_H */
-

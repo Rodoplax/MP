@@ -212,4 +212,3 @@ private:
 }; // end of class VectorInt
 
 #endif /* VECTORINT_H */
-

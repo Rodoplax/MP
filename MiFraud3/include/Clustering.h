@@ -359,4 +359,3 @@ private:
 }; // end of class Clustering
 
 #endif /* CLUSTERING_H */
-

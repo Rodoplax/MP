@@ -19,7 +19,7 @@ using namespace std;
 
 void VectorInt::_allocate(int size) {
 
-    int* _values = new int [size];
+    _values = new int [size];
     _capacity = size;
 }
 
@@ -28,7 +28,8 @@ void VectorInt::_resize(int size) {
     VectorInt temp(_capacity+size);
     temp._copy(*this);
 
-    _capacity = size;
+    _capacity += size;
+    delete[] _values;
     _values = temp._values;
     temp._values = nullptr;
 }
@@ -37,7 +38,7 @@ void VectorInt::_copy(const VectorInt &other) {
     for (int i = 0; i < other._size; i++) {
         _values[i] = other._values[i];
     }
-    _size = other._size
+    _size = other._size;
 }
 
 void VectorInt::append(int value) {

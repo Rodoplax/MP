@@ -1,4 +1,4 @@
-# Install script for directory: /home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3
+# Install script for directory: /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud3/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

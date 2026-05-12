@@ -25,7 +25,7 @@ VectorLocation::VectorLocation(int size) {
     
     _allocate(size);
     _size = size;
-    assign();
+    assign(Location());
 }
 
 VectorLocation::VectorLocation(const VectorLocation &orig) {
@@ -39,7 +39,7 @@ VectorLocation::~VectorLocation() {
 
 void VectorLocation::_allocate(int size) {
 
-    int* _values = new int [size];
+    _locations = new Location [size];
     _capacity = size;
 }
 
@@ -48,16 +48,17 @@ void VectorLocation::_resize(int size) {
     VectorLocation temp(_capacity+size);
     temp._copy(*this);
 
-    _capacity = size;
+    _capacity += size;
+    delete[] _locations;
     _locations = temp._locations;
     temp._locations = nullptr;
 }
 
-int& VectorLocation::_copy(const VectorLocation &other) {
+void VectorLocation::_copy(const VectorLocation &other) {
     for (int i = 0; i < other._size; i++) {
         _locations[i] = other._locations[i];
     }
-    _size = other._size
+    _size = other._size;
 }
 
 int VectorLocation::getSize() const{
@@ -183,6 +184,11 @@ void VectorLocation::load(std::istream& is) {
     if (n<0) 
         throw out_of_range("load(std::istream is): Out of Range. Input is negative");
     
+    if (n > _capacity) {
+        delete[] _locations;
+        _allocate(n);
+    }
+
     _size = n;
 
     for (int i = 0; i < n; i++) {

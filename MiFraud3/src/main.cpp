@@ -87,25 +87,35 @@ int main(int argc, char* argv[]) {
     
     while (i< argc && !hasBeenReadInitialParameters) {
         string s = argv[i];
-        string s1 = argv[i+1];
         if (s == "-K") {
-            K = stoi(s1);
-            i+=2;
+            if (i + 1 < argc) {
+                K = stoi(argv[i+1]);
+                i+=2;
+            } else {
+                showHelp(cout, "Number of clusters not provided after -K");
+                return 1;
+            }
         }
         else if (s == "-o") {
-            outputFileName = s1;
-            i+=2;
+            if (i + 1 < argc) {
+                outputFileName = argv[i+1];
+                i+=2;
+            } else {
+                showHelp(cout, "Invalid use.");
+                return 1;
+            }
         }
-        else if (i<argc) {
+        else {
             indexInputFile = i;
             inputFileName = s;
             hasBeenReadInitialParameters = true;
             i++;
         }
-        else {
-            showHelp(cout,"Invalid use.");
-            hasBeenReadInitialParameters = true;
-        }
+    }
+
+    if (indexInputFile == -1) {
+        showHelp(cout, "Input file not provided");
+        return 1;
     }
 
     // Load the input dataset from the given file
@@ -115,11 +125,7 @@ int main(int argc, char* argv[]) {
     // Set the location vector and K in the clustering object. Use the default
     // seed value.
 
-    VectorLocation locations;
-
-    locations.load(std::cin);
-
-    clustering.set(locations, K);
+    clustering.set(inputDataset.getVectorLocation(), K);
 
     // Run the clustering algorithm
 

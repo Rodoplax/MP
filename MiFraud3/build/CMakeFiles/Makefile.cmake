@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/CMakeLists.txt"
+  "/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud3/CMakeLists.txt"
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
@@ -44,5 +44,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Fraud3.dir/DependInfo.cmake"
+  "CMakeFiles/MiFraud3.dir/DependInfo.cmake"
   )
