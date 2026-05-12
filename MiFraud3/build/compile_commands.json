@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/build",
+  "command": "/usr/bin/g++  -I/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/include -Wall -Wextra -Wpedantic -g -std=gnu++14 -o CMakeFiles/Fraud3.dir/src/VectorInt.cpp.o -c /home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/VectorInt.cpp",
+  "file": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/VectorInt.cpp",
+  "output": "CMakeFiles/Fraud3.dir/src/VectorInt.cpp.o"
+},
+{
+  "directory": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/build",
+  "command": "/usr/bin/g++  -I/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/include -Wall -Wextra -Wpedantic -g -std=gnu++14 -o CMakeFiles/Fraud3.dir/src/Clustering.cpp.o -c /home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/Clustering.cpp",
+  "file": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/Clustering.cpp",
+  "output": "CMakeFiles/Fraud3.dir/src/Clustering.cpp.o"
+},
+{
+  "directory": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/build",
+  "command": "/usr/bin/g++  -I/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/include -Wall -Wextra -Wpedantic -g -std=gnu++14 -o CMakeFiles/Fraud3.dir/src/Location.cpp.o -c /home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/Location.cpp",
+  "file": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/Location.cpp",
+  "output": "CMakeFiles/Fraud3.dir/src/Location.cpp.o"
+},
+{
+  "directory": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/build",
+  "command": "/usr/bin/g++  -I/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/include -Wall -Wextra -Wpedantic -g -std=gnu++14 -o CMakeFiles/Fraud3.dir/src/VectorLocation.cpp.o -c /home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/VectorLocation.cpp",
+  "file": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/VectorLocation.cpp",
+  "output": "CMakeFiles/Fraud3.dir/src/VectorLocation.cpp.o"
+},
+{
+  "directory": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/build",
+  "command": "/usr/bin/g++  -I/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/include -Wall -Wextra -Wpedantic -g -std=gnu++14 -o CMakeFiles/Fraud3.dir/src/DataSet.cpp.o -c /home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/DataSet.cpp",
+  "file": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/DataSet.cpp",
+  "output": "CMakeFiles/Fraud3.dir/src/DataSet.cpp.o"
+},
+{
+  "directory": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/build",
+  "command": "/usr/bin/g++  -I/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/include -Wall -Wextra -Wpedantic -g -std=gnu++14 -o CMakeFiles/Fraud3.dir/src/main.cpp.o -c /home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/main.cpp",
+  "file": "/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/src/main.cpp",
+  "output": "CMakeFiles/Fraud3.dir/src/main.cpp.o"
+}
+]

@@ -1,0 +1,3 @@
+/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/build/CMakeFiles/Fraud3.dir
+/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/build/CMakeFiles/edit_cache.dir
+/home/dgarlie213/Desktop/Home_Remoto/MP/UGRMPBase/CodeProjects/MiFraud3/build/CMakeFiles/rebuild_cache.dir
