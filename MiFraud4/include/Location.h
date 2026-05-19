@@ -165,7 +165,7 @@ public:
      * whitespaces. 
      * @param is Input stream. Input/output parameter
      */
-    void load(std::istream is);
+    void load(std::istream& is);
 
        /**
      * @brief Adds to the values of the x and y coordinates of this object, 
@@ -174,7 +174,7 @@ public:
      * @param location A Location object. Input parameter
      * @return A reference to this object.
      */
-    Location operator+=(Location location);
+    Location& operator+=(const Location& location);
     
     /**
      * @brief Divides the value of the x and y coordinates of this object by the 
@@ -185,7 +185,7 @@ public:
      * @param value A double value. Input parameter
      * @return A reference to this object.
      */    
-    Location operator/=(double value);
+    Location& operator/=(double value);
 
 private:
     /**
@@ -225,7 +225,7 @@ void Trim(std::string & myString);
  * @param obj The Location object. Input parameter
  * @return A reference to the output stream
  */
-std::ostream operator<<(std::ostream os, Location location);
+std::ostream& operator<<(std::ostream& os, const Location& location);
 
 /**
  * @brief Overloading of the stream extraction operator for Location class. 
@@ -240,6 +240,6 @@ std::ostream operator<<(std::ostream os, Location location);
  * @param obj The Location object. Output parameter
  * @return A reference to the input stream
  */
-std::istream operator>>(std::istream is, Location location);
+std::istream& operator>>(std::istream& is, Location& location);
 
 #endif /* LOCATION_H */

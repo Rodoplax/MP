@@ -171,7 +171,7 @@ public:
      * @param index index of the element. Input parameter
      * @return A constant reference to the element at position @p index
      */
-    int operator[](int index);
+    const int& operator[](int index) const;
     
     /**
      * @brief Overloading of the [] operator for VectorInt class
@@ -179,7 +179,7 @@ public:
      * @param index index of the element. Input parameter
      * @return A reference to the element at position @p index
      */
-    int operator[](int index);
+    int& operator[](int index);
 
     /**
      * @brief Overloads the operator += for the VectorInt class. 
@@ -191,9 +191,30 @@ public:
      * @param value The integer value to append to this object. Input parameter
      * @return A reference to this object.
      */
-    VectorInt operator+=(int value);
+    VectorInt& operator+=(int value);
     
 private:
+
+    /**
+     * @brief Allocates the needed memory for the implicit object's dynamic array
+     * @param size size to allocate
+     * @throw std::out_of_range Throws an std::out_of_range exception if the 
+     * given size is not valid
+     */
+    void _allocate(int size);
+
+    /**
+     * @brief Copies from the explicit object to the implicit object all of its data
+     * @param other explicit object. Query parameter
+     */
+    void _copy(const VectorInt &other);
+
+    /**
+     * @brief Resizes the explicit object to _capacity + size
+     * @param size The expansion size of the resize. Input parameter
+     * @return A reference to the implicit object.
+     */
+    void _resize(int size);
     /**
      * Pointer to a dynamic array of integers
      */
@@ -229,7 +250,7 @@ private:
  * @param vector The VectorInt object. Input parameter
  * @return os A reference to the output stream
  */
-std::ostream operator<<(std::ostream os, VectorInt vector);
+std::ostream& operator<<(std::ostream& os, const VectorInt& vector);
 
 /**
  * @brief Overloading of the stream extraction operator for VectorInt class.
@@ -245,7 +266,6 @@ std::ostream operator<<(std::ostream os, VectorInt vector);
  * @param vector The VectorInt object to be filled. Input/output parameter
  * @return A reference to the input stream
  */
-std::istream operator>>(std::istream is, VectorInt vector);
+std::istream& operator>>(std::istream& is, VectorInt& vector);
 
 #endif /* VECTORINT_H */
-

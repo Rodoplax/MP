@@ -65,7 +65,7 @@ public:
      * @param orig the DataSet object used as source for the copy. 
      * Input parameter
      */
-    DataSet(const DataSet &orig);
+    DataSet(const DataSet& orig);
     
     /**
      * @brief Destructor
@@ -276,8 +276,8 @@ public:
      * @return A reduced DataSet
      */
     DataSet getReducedDataSet(Clustering clustering);
-    
-   /**
+
+    /**
     * Returns the index (position) of the nearest instance in this DataSet to
     * the provided instance (@p instance). To do so, the Euclidean distance
     * is used to calculate the distance between two instances.
@@ -297,7 +297,7 @@ public:
     * @return An integer with the index (position) of the nearest instance to
     * @p instance. It returns -1 if this DataSet does not contain any instance.
     */    
-    int nearestInstance(const VectorInt &instance, bool selected[]);
+    int nearestInstance(VectorInt instance, bool selected[]);
 
     /**
      * @brief Overloading of the () operator to access to the value at a
@@ -309,7 +309,7 @@ public:
      * Input parameter
      * @return A const reference to the value at the given position
      */
-    const int &operator()(int instanceIndex, int locationIndex) const;
+    int operator()(int instanceIndex, int locationIndex);
 
     /**
      * @brief Overloading of the () operator to access to the value at a
@@ -362,6 +362,26 @@ private:
      * the order of the columns in the 2D matrix of this DataSet.
      */
     VectorLocation _locations;
+    
+     /** 
+     * @brief Allocates memory for _values and initializes all entries to 0.
+     * Modifier method
+     */
+    void _initMatrix();
+
+    /** 
+     * @brief Copies the data members of the explicit object into the implicit object
+     * assuming the matrix is not initialized.
+     * Modifier method
+     */
+    void _copy(const DataSet& orig);
+
+    /** 
+     * @brief Deallocate the memory of the matrix
+     * Modifier method
+     */
+    void _deallocateMatrix();
+
 }; // end of class DataSet
 
 /**
@@ -414,4 +434,3 @@ void classify(DataSet datasetModel, DataSet datasetToClassify,
         int K1, int K2, bool doReductionDimensionality);
 
 #endif /* DATASET_H */
-

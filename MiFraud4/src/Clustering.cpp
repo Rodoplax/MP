@@ -200,3 +200,38 @@ double Clustering::calculateSumWCV(){
     return sumWCV;
 
 }
+
+bool operator<(const Clustering& clustering1, const Clustering& clustering2){
+
+    bool result = false;
+
+    double wcv1 = clustering1.getSumWCV();
+    double wcv2 = clustering2.getSumWCV();
+
+    if(wcv1 < wcv2 || wcv1 == wcv2 && clustering1.getNumIterations() < clustering2.getNumIterations())
+        result = true;
+    
+    return result;
+}
+
+bool operator>(const Clustering& clustering1, const Clustering& clustering2){
+    return !(clustering1 < clustering2 || clustering1 == clustering2);
+}
+
+// Preguntar si ser equivalente es ser igual ( o es solo comparar SumWCV) 
+// o si deben ser iguales en todo
+bool operator==(const Clustering& clustering1, const Clustering& clustering2){
+    return clustering1.isEquivalentTo(clustering2);
+}
+
+bool operator!=(const Clustering& clustering1, const Clustering& clustering2){
+    return !(clustering1 == clustering2);
+}
+
+bool operator<=(const Clustering& clustering1, const Clustering& clustering2){
+    return !(clustering1 > clustering2);
+}
+
+bool operator>=(const Clustering& clustering1, const Clustering& clustering2){
+    return !(clustering1 < clustering2);
+}

@@ -81,6 +81,25 @@ void Location::load(istream& is){
     Trim(_name);
 }
 
+Location& Location::operator+=(const Location& location){
+
+    _x += location._x;
+    _y += location._y;
+
+    return *this;
+}
+
+Location& Location::operator/=(double value){
+
+    if(value == 0)
+        throw invalid_argument("Division by zero in Location::operator/=");
+
+    _x /= value;
+    _y /= value; 
+
+    return *this;
+}
+
 void Trim(string& s) {
     
     int p = s.find_first_not_of(" \t");
@@ -92,4 +111,16 @@ void Trim(string& s) {
     
     else s = "";
     
+}
+
+std::ostream& operator<<(std::ostream& os, const Location& location){
+
+    os << location.toString();
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, Location& location){
+
+    location.load(is);
+    return is;
 }

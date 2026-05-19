@@ -19,6 +19,9 @@ using namespace std;
 
 void VectorInt::_allocate(int size) {
 
+    if(size < 0)
+        throw out_of_range("Negative size in VectorInt::_allocate");
+
     _values = new int [size];
     _capacity = size;
 }
@@ -151,4 +154,41 @@ VectorInt &VectorInt::operator=(const VectorInt &orig) {
 
 VectorInt::~VectorInt() {
     delete [] _values;
+}
+
+const int& VectorInt::operator[](int index) const{
+    return _values[index];
+}
+
+int& VectorInt::operator[](int index){
+    return _values[index];
+}
+
+VectorInt& VectorInt::operator+=(int value){
+    append(value);
+    return *this;
+}
+
+std::ostream& operator<<(std::ostream& os, const VectorInt& vector){
+    os << vector.toString();
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, VectorInt& vector){
+
+    int n = 0;
+    is >> n;
+
+    vector.clear();
+    
+    if(n < 0)
+        throw out_of_range("Number of elements read cannot be negative");
+
+    for(int i = 0; i < n; ++i){
+        int temp;
+        is >> temp;
+        vector.append(temp);
+    }
+
+    return is;
 }

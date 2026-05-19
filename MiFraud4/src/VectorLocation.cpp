@@ -206,3 +206,32 @@ VectorLocation &VectorLocation::operator=(const VectorLocation &orig) {
     }
     return *this;
 }
+
+const Location& VectorLocation::operator[](int index) const{
+    return _locations[index];
+}
+
+Location& VectorLocation::operator[](int index){
+    return _locations[index];
+}
+
+VectorLocation& VectorLocation::operator+=(const Location& location){
+
+    append(location);
+    return *this;
+}
+
+// Preguntar si podemos hacerlo con toString() porque realmente no se piden 
+// algunos datos que da.
+std::ostream& operator<<(std::ostream& os, const VectorLocation& vector){
+    
+    os << vector.toString();
+    return os;
+}
+
+std::istream& operator>>(std::istream& is, VectorLocation& vector){
+    
+    vector.load(is);
+    return is;
+}
+

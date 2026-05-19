@@ -224,7 +224,7 @@ public:
      * @param index index of the element. Input parameter
      * @return A constant reference to the element at position @p index
      */
-    Location operator[](int index);
+    const Location& operator[](int index) const;
     
     /**
      * @brief Overloading of the [] operator for VectorLocation class
@@ -232,7 +232,7 @@ public:
      * @param index index of the element. Input parameter 
      * @return A reference to the element at position @p index
      */
-    Location operator[](int index);
+    Location& operator[](int index);
 
     /**
      * @brief Overloads the operator += for the VectorLocation class. 
@@ -247,9 +247,31 @@ public:
      * parameter
      * @return A reference to this object.
      */
-    VectorLocation operator+=(Location location);
+    VectorLocation& operator+=(const Location& location);
 
 private:
+    
+    /**
+     * @brief Allocates the needed memory for the implicit object's dynamic array
+     * @param size size to allocate
+     * @throw std::out_of_range Throws an std::out_of_range exception if the 
+     * given size is not valid
+     */
+    void _allocate(int size);
+
+    /**
+     * @brief Copies from the explicit object to the implicit object all of its data
+     * @param other explicit object
+     */
+    void _copy(const VectorLocation& other);
+
+    /**
+     * @brief Resizes the explicit object to _capacity + size
+     * @param size The expansion size of the resize. Input parameter
+     * @return A reference to the implicit object.
+     */
+    void _resize(int size);
+
     /**
      * Pointer to a dynamic array of Locations
      */
@@ -281,7 +303,7 @@ private:
  * @param vector The VectorLocation object. Input parameter
  * @return @p os A reference to the output stream
  */
-std::ostream operator<<(std::ostream os, VectorLocation vector);
+std::ostream& operator<<(std::ostream& os, const VectorLocation& vector);
 
 /**
  * @brief Overloading of the stream extraction operator for VectorLocation class.
@@ -301,7 +323,6 @@ std::ostream operator<<(std::ostream os, VectorLocation vector);
  * @param vector The VectorLocation object to be filled. Input/output parameter
  * @return @p is A reference to the input stream
  */
-std::istream operator>>(std::istream is, VectorLocation vector);
+std::istream& operator>>(std::istream& is, VectorLocation& vector);
 
 #endif /* VECTORLOCATION_H */
-

@@ -34,7 +34,6 @@ Clustering clustering;
 clustering.set(locations, 5);
 clustering.run();
  */
-
 class Clustering {
 public:
     /**
@@ -42,7 +41,7 @@ public:
      * the field (_K) for the number of clusters with 0; the field (_isDone)
      * that tells whether the run() method has already been executed 
      * with false; the fields _sumWCV and _numIterations with 0 and the field
-     * _seed with DEFAULT_RANDOM_SEED. 
+     * _seed with DEFAULT_RANDOM_SEED.
      * The fields (_locations, _clusters,  _centroids) are initialized with 
      * the default constructor of their classes. 
      */
@@ -124,9 +123,9 @@ public:
      * its location index (whithin the _location field), a whitespace, and 
      * the information returned by the Location::toString() method for that 
      * location. An example is the following (a cluster with three locations):
-        0 3.300000 9.100000 Graduate College
-        6 12.600000 17.500000 Admission Information Center
-        7 12.500000 20.000000 Rockefeller College
+0 3.300000 9.100000 Graduate College
+6 12.600000 17.500000 Admission Information Center
+7 12.500000 20.000000 Rockefeller College
      * Query method
      * @param cluster An integer, that defines the index of a cluster. Input
      * parameter
@@ -161,7 +160,7 @@ public:
      * @return true if this Clustering object is equivalent to the provided 
      * Clustering object (@p other); false otherwise
      */
-    bool isEquivalentTo(const Clustering &other) const;
+    bool isEquivalentTo(const Clustering& other) const;
 
     /**
      * @brief Obtains a string with the fields of this Clustering object. 
@@ -173,45 +172,45 @@ public:
      * If follows information about each centroid
      * Next, for each cluster, information about its locations
      * Here, an example is shown:
-        K=5
-        Sum of within-cluster variances: 161.136889
-        Number of iterations: 5
-        Cluster number for each location:
-        21
-        0 2 2 2 2 2 1 1 1 1 1 4 4 4 4 4 4 4 4 4 3
-        Centroids:
-        5
-        3.300000 9.100000 
-        14.880000 21.280000 
-        12.600000 9.460000 
-        18.500000 6.700000 
-        26.088889 15.366667 
-        Cluster 0 information:
-        0 3.300000 9.100000 Graduate College
-        Cluster 1 information:
-        6 12.600000 17.500000 Admission Information Center
-        7 12.500000 20.000000 Rockefeller College
-        8 13.700000 22.800000 Art Museum Store
-        9 17.000000 23.300000 Princeton University Store
-        10 18.600000 22.800000 Labyrinth Books
-        Cluster 2 information:
-        1 11.800000 6.900000 Wawa Public Restrooms
-        2 12.600000 7.300000 Princeton Station
-        3 10.100000 9.700000 Forbes College
-        4 13.300000 12.200000 Dinky Bar & Kitchen
-        5 15.200000 11.200000 Whitman College
-        Cluster 3 information:
-        20 18.500000 6.700000 Yeh College
-        Cluster 4 information:
-        11 20.900000 15.400000 Frist Campus Center
-        12 23.700000 14.800000 Cannon Dial Elm
-        13 24.800000 14.900000 Quadrangle
-        14 25.600000 14.900000 Ivy
-        15 26.400000 14.900000 Cottage
-        16 27.300000 14.500000 Cap & Gown
-        17 28.200000 15.000000 Cloister
-        18 29.100000 15.200000 Charter
-        19 28.800000 18.700000 Engineering Quadrangle
+K=5
+Sum of within-cluster variances: 161.136889
+Number of iterations: 5
+Cluster number for each location:
+21
+0 2 2 2 2 2 1 1 1 1 1 4 4 4 4 4 4 4 4 4 3
+Centroids:
+5
+3.300000 9.100000 
+14.880000 21.280000 
+12.600000 9.460000 
+18.500000 6.700000 
+26.088889 15.366667 
+Cluster 0 information:
+0 3.300000 9.100000 Graduate College
+Cluster 1 information:
+6 12.600000 17.500000 Admission Information Center
+7 12.500000 20.000000 Rockefeller College
+8 13.700000 22.800000 Art Museum Store
+9 17.000000 23.300000 Princeton University Store
+10 18.600000 22.800000 Labyrinth Books
+Cluster 2 information:
+1 11.800000 6.900000 Wawa Public Restrooms
+2 12.600000 7.300000 Princeton Station
+3 10.100000 9.700000 Forbes College
+4 13.300000 12.200000 Dinky Bar & Kitchen
+5 15.200000 11.200000 Whitman College
+Cluster 3 information:
+20 18.500000 6.700000 Yeh College
+Cluster 4 information:
+11 20.900000 15.400000 Frist Campus Center
+12 23.700000 14.800000 Cannon Dial Elm
+13 24.800000 14.900000 Quadrangle
+14 25.600000 14.900000 Ivy
+15 26.400000 14.900000 Cottage
+16 27.300000 14.500000 Cap & Gown
+17 28.200000 15.000000 Cloister
+18 29.100000 15.200000 Charter
+19 28.800000 18.700000 Engineering Quadrangle
      * Query method
      * @return A string with the content described above
      */
@@ -235,7 +234,7 @@ public:
      * (with srand(seed)) in the initialClusterAssignment() method. 
      * Input parameter
      */
-    void set(const VectorLocation &locations, int K, 
+    void set(const VectorLocation& locations, int K, 
         unsigned int seed=DEFAULT_RANDOM_SEED);
     
     /**
@@ -267,6 +266,7 @@ public:
      *       Each location is assigned to the cluster that provides 
      *       the shortest distance to its centroid.
      * 
+     * Modifier method
      */
     void run();
 
@@ -350,11 +350,11 @@ private:
     /**
      * @brief Calculates the sum of the within-cluster variances of this 
      * Clustering object.
-     * The within-cluster variance of a cluster C_j is calculated with:
+     * The within-cluster variance of a cluster C_j is calcultated with:
      * $\sum_{p_i \in C_j} squaredDistance(p_i, centroid_{C_j})$
      * @return A double with the sum of within-cluster variances of this 
      * Clustering
-     * Modifier method
+     * Query method
      */
     double calculateSumWCV();
 }; // end of class Clustering
@@ -368,7 +368,7 @@ private:
  * equal and the number of iterations of @p clustering1 is less than that of 
  * @p clustering2; false otherwise
  */
-bool operator<(Clustering clustering1, Clustering clustering2);
+bool operator<(const Clustering& clustering1, const Clustering& clustering2);
 
 /**
  * @brief Overloading of the greater-than operator for Clustering class
@@ -376,7 +376,7 @@ bool operator<(Clustering clustering1, Clustering clustering2);
  * @param clustering2 A Clustering object. Input parameter
  * @return true if clustering1 > clustering2; false otherwise
  */
-bool operator>(Clustering clustering1, Clustering clustering2);
+bool operator>(const Clustering& clustering1, const Clustering& clustering2);
 
 /**
  * @brief Overloading of the equality operator for Clustering class
@@ -384,7 +384,7 @@ bool operator>(Clustering clustering1, Clustering clustering2);
  * @param clustering2 A Clustering object. Input parameter
  * @return true if clustering1 == clustering2; false otherwise
  */
-bool operator==(Clustering clustering1, Clustering clustering2);
+bool operator==(const Clustering& clustering1, const Clustering& clustering2);
 
 /**
  * @brief Overloading of the not-equal operator for Clustering class
@@ -392,7 +392,7 @@ bool operator==(Clustering clustering1, Clustering clustering2);
  * @param clustering2 A Clustering object. Input parameter
  * @return true if clustering1 != clustering2; false otherwise
  */
-bool operator!=(Clustering clustering1, Clustering clustering2);
+bool operator!=(const Clustering& clustering1, const Clustering& clustering2);
 
 /**
  * @brief Overloading of the less-than-or-equal operator for Clustering class
@@ -400,7 +400,7 @@ bool operator!=(Clustering clustering1, Clustering clustering2);
  * @param clustering2 A Clustering object. Input parameter
  * @return true if clustering1 <= clustering2; false otherwise
  */
-bool operator<=(Clustering clustering1, Clustering clustering2);
+bool operator<=(const Clustering& clustering1, const Clustering& clustering2);
 
 /**
  * @brief Overloading of the greater-than-or-equal operator for Clustering class
@@ -408,6 +408,6 @@ bool operator<=(Clustering clustering1, Clustering clustering2);
  * @param clustering2 A Clustering object. Input parameter
  * @return true if clustering1 >= clustering2; false otherwise
  */
-bool operator>=(Clustering clustering1, Clustering clustering2);
+bool operator>=(const Clustering& clustering1, const Clustering& clustering2);
 #endif /* CLUSTERING_H */
 
