@@ -1,0 +1,1 @@
+/usr/bin/g++ -Wall -Wextra -Wpedantic -g CMakeFiles/Fraud4.dir/src/VectorInt.cpp.o CMakeFiles/Fraud4.dir/src/Clustering.cpp.o CMakeFiles/Fraud4.dir/src/Location.cpp.o CMakeFiles/Fraud4.dir/src/VectorLocation.cpp.o CMakeFiles/Fraud4.dir/src/DataSet.cpp.o CMakeFiles/Fraud4.dir/src/main.cpp.o -o Fraud4 
