@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4
+CMAKE_SOURCE_DIR = /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build
+CMAKE_BINARY_DIR = /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MiFraud4.dir/depend.make
@@ -70,88 +70,88 @@ include CMakeFiles/MiFraud4.dir/progress.make
 include CMakeFiles/MiFraud4.dir/flags.make
 
 CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o: CMakeFiles/MiFraud4.dir/flags.make
-CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o: /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/VectorInt.cpp
+CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o: /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/VectorInt.cpp
 CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o: CMakeFiles/MiFraud4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o -MF CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o -c /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/VectorInt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o -MF CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.o -c /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/VectorInt.cpp
 
 CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/VectorInt.cpp > CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/VectorInt.cpp > CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.i
 
 CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/VectorInt.cpp -o CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/VectorInt.cpp -o CMakeFiles/MiFraud4.dir/src/VectorInt.cpp.s
 
 CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o: CMakeFiles/MiFraud4.dir/flags.make
-CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o: /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/Clustering.cpp
+CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o: /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/Clustering.cpp
 CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o: CMakeFiles/MiFraud4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o -MF CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o -c /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/Clustering.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o -MF CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o -c /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/Clustering.cpp
 
 CMakeFiles/MiFraud4.dir/src/Clustering.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MiFraud4.dir/src/Clustering.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/Clustering.cpp > CMakeFiles/MiFraud4.dir/src/Clustering.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/Clustering.cpp > CMakeFiles/MiFraud4.dir/src/Clustering.cpp.i
 
 CMakeFiles/MiFraud4.dir/src/Clustering.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MiFraud4.dir/src/Clustering.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/Clustering.cpp -o CMakeFiles/MiFraud4.dir/src/Clustering.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/Clustering.cpp -o CMakeFiles/MiFraud4.dir/src/Clustering.cpp.s
 
 CMakeFiles/MiFraud4.dir/src/Location.cpp.o: CMakeFiles/MiFraud4.dir/flags.make
-CMakeFiles/MiFraud4.dir/src/Location.cpp.o: /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/Location.cpp
+CMakeFiles/MiFraud4.dir/src/Location.cpp.o: /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/Location.cpp
 CMakeFiles/MiFraud4.dir/src/Location.cpp.o: CMakeFiles/MiFraud4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MiFraud4.dir/src/Location.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/Location.cpp.o -MF CMakeFiles/MiFraud4.dir/src/Location.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/Location.cpp.o -c /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/Location.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MiFraud4.dir/src/Location.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/Location.cpp.o -MF CMakeFiles/MiFraud4.dir/src/Location.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/Location.cpp.o -c /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/Location.cpp
 
 CMakeFiles/MiFraud4.dir/src/Location.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MiFraud4.dir/src/Location.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/Location.cpp > CMakeFiles/MiFraud4.dir/src/Location.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/Location.cpp > CMakeFiles/MiFraud4.dir/src/Location.cpp.i
 
 CMakeFiles/MiFraud4.dir/src/Location.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MiFraud4.dir/src/Location.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/Location.cpp -o CMakeFiles/MiFraud4.dir/src/Location.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/Location.cpp -o CMakeFiles/MiFraud4.dir/src/Location.cpp.s
 
 CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o: CMakeFiles/MiFraud4.dir/flags.make
-CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o: /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/VectorLocation.cpp
+CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o: /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/VectorLocation.cpp
 CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o: CMakeFiles/MiFraud4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o -MF CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o -c /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/VectorLocation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o -MF CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o -c /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/VectorLocation.cpp
 
 CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/VectorLocation.cpp > CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/VectorLocation.cpp > CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.i
 
 CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/VectorLocation.cpp -o CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/VectorLocation.cpp -o CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.s
 
 CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o: CMakeFiles/MiFraud4.dir/flags.make
-CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o: /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/DataSet.cpp
+CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o: /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/DataSet.cpp
 CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o: CMakeFiles/MiFraud4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o -MF CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o -c /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/DataSet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o -MF CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o -c /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/DataSet.cpp
 
 CMakeFiles/MiFraud4.dir/src/DataSet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MiFraud4.dir/src/DataSet.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/DataSet.cpp > CMakeFiles/MiFraud4.dir/src/DataSet.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/DataSet.cpp > CMakeFiles/MiFraud4.dir/src/DataSet.cpp.i
 
 CMakeFiles/MiFraud4.dir/src/DataSet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MiFraud4.dir/src/DataSet.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/DataSet.cpp -o CMakeFiles/MiFraud4.dir/src/DataSet.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/DataSet.cpp -o CMakeFiles/MiFraud4.dir/src/DataSet.cpp.s
 
 CMakeFiles/MiFraud4.dir/src/main.cpp.o: CMakeFiles/MiFraud4.dir/flags.make
-CMakeFiles/MiFraud4.dir/src/main.cpp.o: /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/main.cpp
+CMakeFiles/MiFraud4.dir/src/main.cpp.o: /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/main.cpp
 CMakeFiles/MiFraud4.dir/src/main.cpp.o: CMakeFiles/MiFraud4.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MiFraud4.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/main.cpp.o -MF CMakeFiles/MiFraud4.dir/src/main.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/main.cpp.o -c /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MiFraud4.dir/src/main.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MiFraud4.dir/src/main.cpp.o -MF CMakeFiles/MiFraud4.dir/src/main.cpp.o.d -o CMakeFiles/MiFraud4.dir/src/main.cpp.o -c /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/main.cpp
 
 CMakeFiles/MiFraud4.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MiFraud4.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/main.cpp > CMakeFiles/MiFraud4.dir/src/main.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/main.cpp > CMakeFiles/MiFraud4.dir/src/main.cpp.i
 
 CMakeFiles/MiFraud4.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MiFraud4.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/main.cpp -o CMakeFiles/MiFraud4.dir/src/main.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/main.cpp -o CMakeFiles/MiFraud4.dir/src/main.cpp.s
 
 # Object files for target MiFraud4
 MiFraud4_OBJECTS = \
@@ -173,7 +173,7 @@ MiFraud4: CMakeFiles/MiFraud4.dir/src/DataSet.cpp.o
 MiFraud4: CMakeFiles/MiFraud4.dir/src/main.cpp.o
 MiFraud4: CMakeFiles/MiFraud4.dir/build.make
 MiFraud4: CMakeFiles/MiFraud4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable MiFraud4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable MiFraud4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MiFraud4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -185,6 +185,6 @@ CMakeFiles/MiFraud4.dir/clean:
 .PHONY : CMakeFiles/MiFraud4.dir/clean
 
 CMakeFiles/MiFraud4.dir/depend:
-	cd /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4 /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4 /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles/MiFraud4.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4 /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4 /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/build/CMakeFiles/MiFraud4.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/MiFraud4.dir/depend
 

@@ -13,6 +13,7 @@
  */
 
 #include <iostream>
+#include <fstream>
 
 #include <cstring>
 #include <string>
@@ -102,14 +103,101 @@ int main(int argc, char* argv[]) {
     // Indicates if all the parameters starting with - has been read
     bool hasBeenReadInitialParameters = false; 
     int indexInputFile = -1; // index of the input file in argv
+    int indexTrainingFile = -1;
 
     // Loop to process program arguments
 
+    int i = 1;   
+    
+    while (i< argc && !hasBeenReadInitialParameters) {
+        string s = argv[i];
+
+        if (s == "-K1") {
+            if (i + 1 < argc) {
+                K1 = stoi(argv[i+1]);
+                i+=2;
+            } else {
+                showHelp(cout, "K1 value not provided after -K1");
+                return 1;
+            }
+        }
+        else if (s == "-K2") {
+            if (i + 1 < argc) {
+                K2 = stoi(argv[i+1]);
+                i+=2;
+            } else {
+                showHelp(cout, "K2 value not provided after -K2");
+                return 1;
+            }
+        }
+        else if (s == "-o") {
+            if (i + 1 < argc) {
+                outputFileName = argv[i+1];
+                i+=2;
+            } else {
+                showHelp(cout, "Output filename not provided after -o");
+                return 1;
+            }
+        }
+        
+
+        else if (s == "-np") {
+            
+            doReduction = true;
+            i+=1;
+        }
+        else if (s[0] == '-') {
+            string error = "Invalid option " + s;
+            showHelp(cout, error);
+                return 1;
+        }
+        else {
+            hasBeenReadInitialParameters = true;
+            indexTrainingFile = i;
+            if (i+1<argc) {
+                indexInputFile = i+1;
+            }
+        }
+    }
+    
+    if (indexTrainingFile == -1) {
+        showHelp(cout, "Name of training dataset not provided");
+        return 1;
+    }
+    if (indexInputFile == -1) {
+        showHelp(cout, "Name of test dataset not provided");
+        return 1;
+    }
+    
     // Load training and test datasets
+    
+    ifstream inputFile;
+    inputFile.open(argv[indexInputFile]);
+    if(!inputFile) {
+        throw ios_base::failure(" The given file cannot be opened");
+    }
+    inputFile >> trainingDataset;
+
+    inputFile.close();
+
+    inputFile.open(argv[indexTrainingFile]);
+    if(!inputFile) {
+        throw ios_base::failure(" The given file cannot be opened");
+    }
+    inputFile >> testDataset;
 
     // Classify the test dataset
 
+    classify(trainingDataset,testDataset,K1,K2,doReduction);
+
     // Save the classified test dataset in the given output file
+
+    ofstream outputFile;
+
+    outputFile.open(outputFileName);
+    if (!outputFile)
+        throw ios_base::failure(" The given file cannot be opened");
+    outputFile << testDataset;
 
     return 0;
 }

@@ -40,6 +40,9 @@
  */
 class DataSet {
 public:
+
+    friend std::istream operator>>(std::istream &is, DataSet &dataset);
+
     /**
      * @brief It builds a DataSet object with the provided number of instances
      * and number of locations. This class uses a bidimensional matrix with 
@@ -309,7 +312,7 @@ public:
      * Input parameter
      * @return A const reference to the value at the given position
      */
-    int operator()(int instanceIndex, int locationIndex);
+    const int &operator()(int instanceIndex, int locationIndex) const;
 
     /**
      * @brief Overloading of the () operator to access to the value at a
@@ -321,7 +324,7 @@ public:
      * Input parameter
      * @return A reference to the value at the given position
      */
-    int operator()(int instanceIndex, int locationIndex);
+    int &operator()(int instanceIndex, int locationIndex);
 
 private:
     /**
@@ -390,7 +393,7 @@ private:
  * @param dataset The DataSet object. Input parameter
  * @return A reference to the output stream
  */
-std::ostream operator<<(std::ostream os, DataSet dataset);
+std::ostream operator<<(std::ostream &os, const DataSet &dataset);
 
 /**
  * @brief Overloading of the stream extraction operator for DataSet class.
@@ -406,7 +409,7 @@ std::ostream operator<<(std::ostream os, DataSet dataset);
  * @param dataset The DataSet object to be filled. Input/output parameter
  * @return A reference to the input stream
  */
-std::istream operator>>(std::istream is, DataSet dataset);
+std::istream operator>>(std::istream &is, DataSet &dataset);
 
 /**
  * Classifies the instances of the dataset @p dataSetToClassify with 
@@ -430,7 +433,7 @@ std::istream operator>>(std::istream is, DataSet dataset);
  * @param doReductionDimensionality Indicates whether or not dimensionality 
  * reduction should be applied using the clustering algorithm. Input parameter
  */
-void classify(DataSet datasetModel, DataSet datasetToClassify, 
+void classify(const DataSet &datasetModel, DataSet &datasetToClassify, 
         int K1, int K2, bool doReductionDimensionality);
 
 #endif /* DATASET_H */
