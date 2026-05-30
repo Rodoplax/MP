@@ -106,7 +106,6 @@ int main(int argc, char* argv[]) {
     int indexTrainingFile = -1;
 
     // Loop to process program arguments
-
     int i = 1;   
     
     while (i< argc && !hasBeenReadInitialParameters) {
@@ -141,7 +140,7 @@ int main(int argc, char* argv[]) {
         }
         
 
-        else if (s == "-np") {
+        else if (s == "-nr") {
             
             doReduction = true;
             i+=1;
@@ -171,33 +170,19 @@ int main(int argc, char* argv[]) {
     
     // Load training and test datasets
     
-    ifstream inputFile;
-    inputFile.open(argv[indexInputFile]);
-    if(!inputFile) {
-        throw ios_base::failure(" The given file cannot be opened");
-    }
-    inputFile >> trainingDataset;
+    string inputFileName = argv[indexInputFile];
+    string trainingFileName = argv[indexTrainingFile];
 
-    inputFile.close();
-
-    inputFile.open(argv[indexTrainingFile]);
-    if(!inputFile) {
-        throw ios_base::failure(" The given file cannot be opened");
-    }
-    inputFile >> testDataset;
+    trainingDataset.load(trainingFileName);
+    testDataset.load(inputFileName);
 
     // Classify the test dataset
 
-    classify(trainingDataset,testDataset,K1,K2,doReduction);
+    classify(trainingDataset,testDataset,K1,K2,doReduction); // NO SE REDUCE EL NUMERO DE LOCALIZACIONES AL CLASIFICAR EN EL ORIGINAL, SOLO EN LA COPIA PARA PONER LAS LABELS
 
     // Save the classified test dataset in the given output file
-
-    ofstream outputFile;
-
-    outputFile.open(outputFileName);
-    if (!outputFile)
-        throw ios_base::failure(" The given file cannot be opened");
-    outputFile << testDataset;
+    
+    testDataset.save(outputFileName);
 
     return 0;
 }

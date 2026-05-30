@@ -208,7 +208,7 @@ bool operator<(const Clustering& clustering1, const Clustering& clustering2){
     double wcv1 = clustering1.getSumWCV();
     double wcv2 = clustering2.getSumWCV();
 
-    if(wcv1 < wcv2 || wcv1 == wcv2 && clustering1.getNumIterations() < clustering2.getNumIterations())
+    if(wcv1 < wcv2 || (wcv1 == wcv2 && clustering1.getNumIterations() < clustering2.getNumIterations()))
         result = true;
     
     return result;

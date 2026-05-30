@@ -41,7 +41,7 @@
 class DataSet {
 public:
 
-    friend std::istream operator>>(std::istream &is, DataSet &dataset);
+    friend std::istream &operator>>(std::istream &is, DataSet &dataset);
 
     /**
      * @brief It builds a DataSet object with the provided number of instances
@@ -66,7 +66,7 @@ public:
     /**
      * @brief Copy constructor
      * @param orig the DataSet object used as source for the copy. 
-     * Input parameter
+     * Input parameterfriend std::istream operator>>(std::istream &is, DataSet &dataset);
      */
     DataSet(const DataSet& orig);
     
@@ -393,7 +393,7 @@ private:
  * @param dataset The DataSet object. Input parameter
  * @return A reference to the output stream
  */
-std::ostream operator<<(std::ostream &os, const DataSet &dataset);
+std::ostream &operator<<(std::ostream &os, const DataSet &dataset);
 
 /**
  * @brief Overloading of the stream extraction operator for DataSet class.
@@ -409,7 +409,7 @@ std::ostream operator<<(std::ostream &os, const DataSet &dataset);
  * @param dataset The DataSet object to be filled. Input/output parameter
  * @return A reference to the input stream
  */
-std::istream operator>>(std::istream &is, DataSet &dataset);
+std::istream &operator>>(std::istream &is, DataSet &dataset);
 
 /**
  * Classifies the instances of the dataset @p dataSetToClassify with 

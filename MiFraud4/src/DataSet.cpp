@@ -258,31 +258,33 @@ void classify(const DataSet &datasetModel, DataSet &datasetToClassify,
         throw std::invalid_argument("K1 is less or equal to 0");
     if (K2 <1)
         throw std::invalid_argument("K2 is less than 1");
-    if (datasetModel.getNumLocations() !=datasetModel.getNumLocations() )
+    if (datasetModel.getNumLocations() !=datasetToClassify.getNumLocations() )
         throw std::invalid_argument("Number of locations in datasets is not equal");
     if  (K2>datasetModel.getNumInstances())
         throw std::invalid_argument("K2 is greater than the number of instances in datasetModel");
     
     DataSet Model(datasetModel);
+    DataSet ClassifyCopy(datasetToClassify);
+
     if (doReductionDimensionality) {
         
         Clustering reducer_clustering;
-        reducer_clustering.set(datasetToClassify.getVectorLocation(),K1);
+        reducer_clustering.set(Model.getVectorLocation(),K1);
         reducer_clustering.run();
 
         if(reducer_clustering.isDone()) {
             Model = Model.getReducedDataSet(reducer_clustering);
-            datasetToClassify = datasetToClassify.getReducedDataSet(reducer_clustering);
+            ClassifyCopy = datasetToClassify.getReducedDataSet(reducer_clustering);
         }
     }
 
-    for(int fila = 0; fila<Model.getNumInstances();fila++){
+    for(int fila = 0; fila<ClassifyCopy.getNumInstances();fila++){
         VectorInt labels;
         VectorInt count_labels;
         bool * selected = new bool [Model.getNumInstances()];
         VectorInt instance;
-            for (int i = 0; i < datasetToClassify.getNumLocations();i++) 
-                instance.append(datasetToClassify(fila,i));
+            for (int i = 0; i < ClassifyCopy.getNumLocations();i++) 
+                instance.append(ClassifyCopy(fila,i));
             for (int i = 0; i < Model.getNumInstances();i++)
                 selected[i] = false;
         for (int k = 0; k<K2;k++) {    
@@ -293,7 +295,7 @@ void classify(const DataSet &datasetModel, DataSet &datasetToClassify,
             // Con cada label y las veces que aparece
             int label = Model.getLabel(nearest);
             int i = 0;
-            bool found;
+            bool found = false;
             while(i<labels.getSize() && !found) {
                 found = (labels[i] == label);
                 if (!found)
@@ -331,11 +333,12 @@ int &DataSet::operator()(int instanceIndex, int locationIndex) {
     return _values[instanceIndex][locationIndex];
 }
 
-std::ostream operator<<(std::ostream &os, const DataSet &dataset) {
+std::ostream &operator<<(std::ostream &os, const DataSet &dataset) {
     os << dataset.toString();
+    return os;
 }
 
-std::istream operator>>(std::istream &is, DataSet &dataset) {
+std::istream &operator>>(std::istream &is, DataSet &dataset) {
     dataset.clear();
 
     dataset._locations.load(is);
@@ -365,4 +368,5 @@ std::istream operator>>(std::istream &is, DataSet &dataset) {
             is >> dataset._values[i][j];
         }
     }
+    return is;
 }
