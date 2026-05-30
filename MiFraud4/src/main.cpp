@@ -107,8 +107,8 @@ int main(int argc, char* argv[]) {
 
     // Loop to process program arguments
     int i = 1;   
-    
-    while (i< argc && !hasBeenReadInitialParameters) {
+
+    while (i < argc && !hasBeenReadInitialParameters) {
         string s = argv[i];
 
         if (s == "-K1") {
@@ -138,11 +138,9 @@ int main(int argc, char* argv[]) {
                 return 1;
             }
         }
-        
-
         else if (s == "-nr") {
             
-            doReduction = true;
+            doReduction = false;
             i+=1;
         }
         else if (s[0] == '-') {

@@ -1,8 +1,8 @@
 CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o: \
- /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/Clustering.cpp \
+ /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/Clustering.cpp \
  /usr/include/stdc-predef.h \
- /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/include/Clustering.h \
- /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/include/VectorInt.h \
+ /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/include/Clustering.h \
+ /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/include/VectorInt.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -147,5 +147,5 @@ CMakeFiles/MiFraud4.dir/src/Clustering.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/include/VectorLocation.h \
- /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/include/Location.h
+ /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/include/VectorLocation.h \
+ /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/include/Location.h

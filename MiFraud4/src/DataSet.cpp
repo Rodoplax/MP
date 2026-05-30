@@ -49,6 +49,7 @@ DataSet::DataSet(int nInstances, int nLocations)
 
     // Initialize _values
     _initMatrix();
+    initInstances();
 }
 
 void DataSet::_initMatrix(){
@@ -59,26 +60,22 @@ void DataSet::_initMatrix(){
 
         for (int i = 1; i < _nInstances; ++i)
             _values[i] = _values[i - 1] + _nLocations;
-        
-        // Initialize all values to 0
-        initInstances();
     } 
     else _values = nullptr;
     
 }
 
 DataSet::DataSet(const DataSet& orig){
+    this->_nInstances = orig._nInstances;
+    this->_nLocations = orig._nLocations;
+    _initMatrix();
     _copy(orig);
 }
 
 void DataSet::_copy(const DataSet& orig){
-
-    this->_nInstances = orig._nInstances;
-    this->_nLocations = orig._nLocations;
     this->_labels = orig._labels;
     this->_locations = orig._locations;
 
-    _initMatrix();
     for(int i = 0; i < _nInstances*_nLocations; ++i)
         _values[0][i] = orig._values[0][i];
 }
@@ -98,6 +95,9 @@ DataSet::~DataSet(){
 DataSet& DataSet::operator=(const DataSet& orig){
     if(this != &orig){
         _deallocateMatrix();
+        this->_nInstances = orig._nInstances;
+        this->_nLocations = orig._nLocations;
+        _initMatrix();
         _copy(orig);
     }
 
@@ -172,7 +172,7 @@ void DataSet::clear(){
     _values = nullptr;
 }
 
-void DataSet::save(string fileName){
+void DataSet::save(const string& fileName){
     ofstream file(fileName);
 
     if (!file) {
@@ -189,7 +189,7 @@ void DataSet::save(string fileName){
     file.close();
 }
 
-void DataSet::load(string& fileName){
+void DataSet::load(const string& fileName){
     ifstream file(fileName);
     if (!file) {
         clear();
@@ -208,7 +208,7 @@ void DataSet::load(string& fileName){
     file.close();
 }
 
-DataSet DataSet::getReducedDataSet(Clustering clustering){
+DataSet DataSet::getReducedDataSet(const Clustering& clustering){
     if (!clustering.isDone()) {
         throw invalid_argument("The clustering algorithm has not been run yet");
     }
@@ -227,12 +227,14 @@ DataSet DataSet::getReducedDataSet(Clustering clustering){
     return reducedDataset;
 }
 
-int DataSet::nearestInstance(VectorInt instance, bool selected[]) {
+int DataSet::nearestInstance(const VectorInt& instance, bool selected[]) {
     if (instance.getSize() != getNumLocations())
         throw std::invalid_argument("The size of the provided instance and the number of locations is not equal");
     
-    float min_dist = INFINITY;
-    int min_instance = 0;
+    if (getNumInstances() == 0) return -1;
+
+    double min_dist = INFINITY;
+    int min_instance = -1;
     
     for (int i = 0; i<getNumInstances(); i++) {
         
@@ -278,10 +280,11 @@ void classify(const DataSet &datasetModel, DataSet &datasetToClassify,
         }
     }
 
+    bool * selected = new bool [Model.getNumInstances()];
+
     for(int fila = 0; fila<ClassifyCopy.getNumInstances();fila++){
         VectorInt labels;
         VectorInt count_labels;
-        bool * selected = new bool [Model.getNumInstances()];
         VectorInt instance;
             for (int i = 0; i < ClassifyCopy.getNumLocations();i++) 
                 instance.append(ClassifyCopy(fila,i));
@@ -318,11 +321,16 @@ void classify(const DataSet &datasetModel, DataSet &datasetToClassify,
             if(count_labels[i]>max_count) {
                 max_count = count_labels[i];
                 max_label = labels[i];
+            } else if (count_labels[i] == max_count) {
+                if (labels[i] < max_label) {
+                    max_label = labels[i];
+                }
             }
         }
         datasetToClassify.setLabel(fila,max_label);
-        delete [] selected;
     }
+
+    delete [] selected;
 }
 
 const int &DataSet::operator()(int instanceIndex, int locationIndex) const {
