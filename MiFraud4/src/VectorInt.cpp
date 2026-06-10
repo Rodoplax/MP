@@ -58,11 +58,15 @@ void VectorInt::assign(int value) {
 int & VectorInt::at(int pos) {
     if (pos >= _size)
         throw std::out_of_range("void VectorInt::at(int pos) : Size of the array reached.");
+    if (pos < 0)
+        throw std::out_of_range("void VectorInt::at(int pos) : Size of the array reached.");
     return _values[pos];
 }
 
 const int & VectorInt::at(int pos) const {
     if (pos >= _size)
+        throw std::out_of_range("void VectorInt::at(int pos) : Size of the array reached.");
+    if (pos < 0)
         throw std::out_of_range("void VectorInt::at(int pos) : Size of the array reached.");
     return _values[pos];
 }

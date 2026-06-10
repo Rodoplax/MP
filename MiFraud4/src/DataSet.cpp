@@ -124,8 +124,8 @@ int DataSet::getValue(int instanceIndex, int locationIndex) const{
 }
 
 int DataSet::getLabel(int instanceIndex) const{
-    //if( instanceIndex < 0 ||  instanceIndex >= _nInstances )
-    //   throw out_of_range("The instance index is not a valid index for an instance in this DataSet");
+    if( instanceIndex < 0 ||  instanceIndex >= _nInstances )
+       throw out_of_range("The instance index is not a valid index for an instance in this DataSet");
 
     return _labels.at(instanceIndex);
 }

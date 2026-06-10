@@ -5,6 +5,8 @@
 
 /**
  * @file main.cpp
+ * @author Pedro Angel Mota Ortega
+ * @author David García Liébana
  * @author Silvia Acid Carrillo <acid@decsai.ugr.es>
  * @author Andrés Cano Utrera <acu@decsai.ugr.es>
  * @author Luis Castillo Vidal <L.Castillo@decsai.ugr.es>
@@ -176,7 +178,7 @@ int main(int argc, char* argv[]) {
 
     // Classify the test dataset
 
-    classify(trainingDataset,testDataset,K1,K2,doReduction); // NO SE REDUCE EL NUMERO DE LOCALIZACIONES AL CLASIFICAR EN EL ORIGINAL, SOLO EN LA COPIA PARA PONER LAS LABELS
+    classify(trainingDataset,testDataset,K1,K2,doReduction);
 
     // Save the classified test dataset in the given output file
     

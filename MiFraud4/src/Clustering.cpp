@@ -215,17 +215,7 @@ bool operator<(const Clustering& clustering1, const Clustering& clustering2){
 }
 
 bool operator>(const Clustering& clustering1, const Clustering& clustering2){
-    return !(clustering1 < clustering2 || clustering1 == clustering2);
-}
-
-// Preguntar si ser equivalente es ser igual ( o es solo comparar SumWCV) 
-// o si deben ser iguales en todo
-bool operator==(const Clustering& clustering1, const Clustering& clustering2){
-    return clustering1.isEquivalentTo(clustering2);
-}
-
-bool operator!=(const Clustering& clustering1, const Clustering& clustering2){
-    return !(clustering1 == clustering2);
+    return (clustering2 < clustering1);
 }
 
 bool operator<=(const Clustering& clustering1, const Clustering& clustering2){
@@ -235,3 +225,13 @@ bool operator<=(const Clustering& clustering1, const Clustering& clustering2){
 bool operator>=(const Clustering& clustering1, const Clustering& clustering2){
     return !(clustering1 < clustering2);
 }
+
+bool operator==(const Clustering& clustering1, const Clustering& clustering2) {
+    return (clustering1>=clustering2 && clustering2>=clustering1);
+}
+
+bool operator!=(const Clustering& clustering1, const Clustering& clustering2) {
+    return !(clustering1 == clustering2);
+}
+
+

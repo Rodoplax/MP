@@ -1,8 +1,8 @@
 CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o: \
- /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/src/VectorLocation.cpp \
+ /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/src/VectorLocation.cpp \
  /usr/include/stdc-predef.h \
- /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/include/VectorLocation.h \
- /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/include/Location.h \
+ /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/include/VectorLocation.h \
+ /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/include/Location.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -147,4 +147,4 @@ CMakeFiles/MiFraud4.dir/src/VectorLocation.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/usuario/Escritorio/UGRMPBase/CodeProjects/MiFraud4/include/Location.h
+ /home/usuario/Escritorio/MP/UGRMPBase/CodeProjects/MiFraud4/include/Location.h
